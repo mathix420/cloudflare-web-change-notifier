@@ -18,7 +18,7 @@ export default defineTask({
       console.log('New version detected!');
 
       await storage.setItem('beeper:version', version);
-      await notifyTelegram(`🆕 New beeper version available: ${version}`);
+      await notifyTelegram(`🆕 New beeper version available: ${version}`, process.env.TELEGRAM_CHAT_ID);
     }
 
     return { result: "Success" };

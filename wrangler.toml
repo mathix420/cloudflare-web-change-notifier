@@ -5,7 +5,7 @@ assets = { directory = "./.output/public/", binding = "ASSETS" }
 
 [triggers]
 # WARN: Make sure to have the same values in nitro config
-crons = ["0 * * * *"]
+crons = ["0 * * * *", "30 11 * * 1-5"]
 
 [observability.logs]
 enabled = true
