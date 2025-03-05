@@ -1,0 +1,11 @@
+name = "change-notifier"
+compatibility_date = "2025-03-05"
+main = "./.output/server/index.mjs"
+assets = { directory = "./.output/public/", binding = "ASSETS" }
+
+[triggers]
+# WARN: Make sure to have the same values in nitro config
+crons = ["0 * * * *"]
+
+[observability.logs]
+enabled = true
