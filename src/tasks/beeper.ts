@@ -4,7 +4,8 @@ export default defineTask({
     description: "Check latest beeper v4 version",
   },
   async run() {
-    const lastVesrion = await useStorage().getItem('beeper:version');
+    const storage = useStorage('data')
+    const lastVesrion = await storage.getItem('beeper:version');
     const { url } = await fetch('https://api.beeper.com/desktop/download/linux/x64/stable/com.automattic.beeper.desktop');
 
     console.log('Beeper url:', url);
@@ -16,7 +17,7 @@ export default defineTask({
     if (lastVesrion !== version) {
       console.log('New version detected!');
 
-      await useStorage().setItem('beeper:version', version);
+      await storage.setItem('beeper:version', version);
       await notifyTelegram(`🆕 New beeper version available: ${version}`);
     }
 
