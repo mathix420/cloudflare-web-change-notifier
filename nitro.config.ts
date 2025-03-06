@@ -20,6 +20,6 @@ export default defineNitroConfig({
     // Run `beeper` task every hours
     "0 * * * *": ["beeper"],
     // Run `crous` task every week day at 11:45 UTC+1
-    "45 10 * * 1-5": ["crous"],
+    "45 10 * * 2-6": ["crous"],
   },
 });
