@@ -15,6 +15,14 @@ export default defineNitroConfig({
     storage: { data: { driver: 'cloudflare-kv-binding', binding: 'KV' } },
   },
 
+  runtimeConfig: {
+    telegram: {
+      botToken: '',
+      chatId: '',
+      chatIdAnais: '',
+    },
+  },
+
   // WARN: Make sure to have the same values in wrangler config
   scheduledTasks: {
     // Run `beeper` task every hours

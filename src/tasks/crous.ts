@@ -4,8 +4,8 @@ export default defineTask({
     description: "Send today's crous menu",
   },
   async run() {
+    const { telegram: { chatId } } = useRuntimeConfig();
     const doc = await fetch('https://www.crous-lorraine.fr/restaurant/resto-u-verlaine-2/').then(res => res.text());
-
     const [section] = doc.match(/(?:<li>Plat du jour<ul>).*(?:<\/li>)/gm)
 
     console.log('Crous', section)
@@ -23,7 +23,7 @@ export default defineTask({
 
     console.log('Crous', withBoldTitles)
 
-    notifyTelegram(withBoldTitles, process.env.TELEGRAM_CHAT_ID_ANAIS);
+    await notifyTelegram(withBoldTitles, chatId, true);
 
     return { result: "Success" };
   },
