@@ -11,5 +11,5 @@ crons = ["0 * * * *", "45 10 * * 2-6"]
 enabled = true
 
 [[kv_namespaces]]
-binding = "KV"
+binding = "STORAGE"
 id = "f401b20a4bba4f07bdc8ea9270dd50ba"

@@ -11,10 +11,6 @@ export default defineNitroConfig({
     tasks: true,
   },
 
-  $production: {
-    storage: { data: { driver: 'cloudflare-kv-binding', binding: 'KV' } },
-  },
-
   runtimeConfig: {
     telegram: {
       botToken: '',

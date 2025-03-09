@@ -4,7 +4,7 @@ export default defineTask({
     description: "Check latest beeper v4 version",
   },
   async run() {
-    const storage = useStorage('data')
+    const storage = useStorage()
     const { telegram: { chatId } } = useRuntimeConfig();
     const lastVesrion = await storage.getItem('beeper:version');
     const { url } = await fetch('https://api.beeper.com/desktop/download/linux/x64/stable/com.automattic.beeper.desktop');
